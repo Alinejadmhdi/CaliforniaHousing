@@ -1,0 +1,23 @@
+project_name: "californiahousing"
+entity: "alinejadmhdi-iut"
+
+# Common settings
+random_seed: 42
+
+# Task 1: Regression Hyperparameter Search Spaces
+regression_sweeps:
+  ridge:
+    # Instructions ask for log-scale study of alpha 
+    alphas: [0.001, 0.01, 0.1, 1.0, 10.0, 100.0]
+  
+  random_forest:
+    # Instructions ask for n_estimators and max_depth [cite: 183]
+    n_estimators: [50, 100, 200]
+    max_depths: [5, 10, 20, null]
+
+# Task 2: Classification Hyperparameter Search Spaces
+classification_sweeps:
+  svm:
+    # Instructions ask for C and Gamma [cite: 206]
+    C: [0.1, 1, 10, 100]
+    gamma: ["scale", "auto"]
